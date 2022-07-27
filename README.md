@@ -38,7 +38,7 @@ Some preliminary things you should do before starting
     print(f"the date and time is: {datetime.now()}")
    ```
 
-   in ipython, you get autocompletion which is helpful for when you just arent sure what you can do with a variable.
+   in ipython, you get autocompletion which is helpful for when you just arent sure what you can do with something. Lets create an array variable, then type `array.` then press `TAB`, and you will see your options. It looks like the following:
 
    ```bash
       In [10]: array = []
@@ -72,4 +72,4 @@ Some preliminary things you should do before starting
    Also, you can press the 'run' triangle in the top right of vscode.
 
 3. After you create your file `first_file.py`, lets push it to github.  
-   Press the "Source Control" button on the left bar. Then under `Changes` you will see your file. Click the `+` next to the file name to `Stage` the change you made to it. Then type a commit message such as `added a python file in vscode`. Then press `Commit`
+   Press the "Source Control" button on the left bar. Then under `Changes` you will see your file. Click the `+` next to the file name to `Stage` the change you made to it. Then type a commit message such as `added a python file in vscode`. Then press `Commit`. Then press `Sync Changes`. Now your code has been pushed to Github.
