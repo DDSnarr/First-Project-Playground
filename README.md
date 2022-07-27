@@ -193,6 +193,99 @@ print(is_even(101))
 
 Try importing another function and using it.
 
-### An API
+### An API from all this
 
-What is an API, its a big word for nothing TBH. But its kinda a simple idea. So youve got all these functions that arent very useful for you, but lets say someone on the other side of the world doesnt know how to check if a number is even or odd, and they will pay you to do it. They want their computer to be able to send a number
+What is an API, its a big word for nothing TBH. But its kinda a simple idea. So youve got all these functions that arent very useful for you, but lets say someone on the other side of the world doesnt know how to check if a number is even or odd, and they will pay you to do it. They want their computer to be able to send a number to you and you to return whether or not that number is even. They will pay you 1 cent each time they "call" your API. Free money... But how do you get their request (a number) and how do you get them back their response (true or false). **The Internet**!
+
+An API is basically just how computers talk to each other over the internet. Computers dont need the data to look pretty like we humans demand, so they **dont** use HTML or CSS. Its just raw data.
+
+Creating an API is a common thing to do in pretty much any programming language. So there are often "libaries" to do it that make it easier for a developer. In python, a good library to use is `Flask`.
+
+First we install it. Open a terminal and type
+
+```bash
+pip install Flask
+```
+
+Now we can `import` it in our code.
+
+Its will become clearer with an example, in `app.py`
+
+```python3
+from flask import Flask
+
+app = Flask(__name__)
+
+
+@app.get("/")
+def hello_world():
+    return "Hello, World!"
+
+
+app.run(debug=True, port=5000)
+```
+
+Now visit the url http://localhost:5000/ and you should see the hello world!
+
+Take a minute to look over this code, but know that it doesnt make sense to me either. Like, what is with the `@` symbol. No idea, but thats just how this library works. BTW Im not just pulling this code out of thin air, Im copying it from the documentation from `Flask` website https://flask.palletsprojects.com/en/2.0.x/quickstart/. Thats just how things work.
+
+In the `app.py` lets add another function
+
+```
+@app.get("/clyde")
+def dog():
+    return "Snaggle tooth"
+
+```
+
+See that you get something else back when you go to this URL http://localhost:5000/clyde
+
+We can kinda make sense of the whole Flask thing. You are running a python program on your laptop which when you say "get me the url ending in `/clyde`" it returns a piece of text.
+
+This is how the internet works. You go to reddit, facebook, etc, its just a URL that returns information. Our API just returns less pretty information.
+
+Lets create a function that simply returns a random int. It turns out there is a library called `random` where we can import a function `randint(low, high)` which will return a random int in the range [low, high].
+
+Example:
+
+```ipython
+
+In [1]: from random import randint
+
+In [2]: randint(0, 10)
+Out[2]: 9
+
+In [3]: randint(0, 10)
+Out[3]: 6
+
+In [4]: randint(0, 10)
+Out[4]: 1
+
+In [5]: randint(0, 999)
+Out[5]: 529
+
+In [6]: randint(0, 999)
+Out[6]: 554
+
+In [7]: randint(0, 999)
+Out[7]: 327
+```
+
+Add a function to the `app.py` which returns a random integer between 0 and 1000 when someone goes to the url `/random`.
+
+<details>
+
+```python3
+
+@app.get("/random")
+def random_number():
+    num = randint(0, 100)
+    return str(num)
+
+```
+
+Go to http://localhost:5000/random and refresh the page a few times  
+Note that if you just return an int then flask will freak out. It wants you to return a string, thats why we `str(num)`. It seems that everything returned from one of these magic functions must be a string.
+
+</details>
+```
