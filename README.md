@@ -7,7 +7,7 @@ You wont be running the python code in your browser like you do with Helsinki, i
 
 Also, all of your code and code history will go in this github repository so you can learn how `git` works. Its a good practice to use this, and it makes your life easier over time as a project grows.
 
-Some preliminary things you should do before starting
+Some preliminary things you should know before starting
 
 1. Make sure python is installed.
 
@@ -79,7 +79,7 @@ Some preliminary things you should do before starting
 
 ---
 
-### Now, lets do some practice
+## Now, lets do some practice
 
 Lets create another file called whatever you want, Ill call it `bunch_of_functions.py`.
 
@@ -199,7 +199,7 @@ print(is_even(101))
 
 Try importing another function and using it.
 
-### An API from all this
+## An API from all this
 
 What is an API, its a big word for nothing TBH. But its kinda a simple idea. So youve got all these functions that arent very useful for you, but lets say someone on the other side of the world doesnt know how to check if a number is even or odd, and they will pay you to do it. They want their computer to be able to send a number to you and you to return whether or not that number is even. They will pay you 1 cent each time they "call" your API. Free money... But how do you get their request (a number) and how do you get them back their response (true or false). **The Internet**!
 
