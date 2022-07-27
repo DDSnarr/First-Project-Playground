@@ -44,12 +44,12 @@ Some preliminary things you should know before starting
    in ipython, you get autocompletion which is helpful for when you just arent sure what you can do with something. Lets create an list variable `list_nums`, then type `list_nums.` then press `TAB`, and you will see your options. It looks like the following:
 
    ```bash
-      In [10]: list_nums = []
+    In [10]: list_nums = []
 
-      In [11]: list_nums.
-                      append()  count()   insert()  reverse()
-                      clear()   extend()  pop()     sort()
-                      copy()    index()   remove()
+    In [11]: list_nums.
+                    append()  count()   insert()  reverse()
+                    clear()   extend()  pop()     sort()
+                    copy()    index()   remove()
 
    ```
 
@@ -218,6 +218,7 @@ Now we can `import` it in our code.
 Its will become clearer with an example, in `app.py`
 
 ```python3
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -237,7 +238,8 @@ Take a minute to look over this code, but know that it doesnt make sense to me e
 
 In the `app.py` lets add another function
 
-```
+```python3
+
 @app.get("/clyde")
 def dog():
     return "Snaggle tooth"
