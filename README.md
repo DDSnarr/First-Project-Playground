@@ -78,7 +78,7 @@ Some preliminary things you should do before starting
 
 ### Now, lets do some practice
 
-Lets create another file called whatever you want, Ill call it `main.py`.
+Lets create another file called whatever you want, Ill call it `bunch_of_functions.py`.
 
 Now, Lets refresh just what a function does in python:
 
@@ -156,6 +156,43 @@ def average_of_list(list_nums):
 
 </details>
 
----
+Finally, create 2 functions, `def is_even(num)` and `def is_odd(num)`, and add them to your set of functions.
 
-You should have a nice set of functions that doesnt really do anything useful, but thats ok. Lets say someone on the other side of the world has a use
+<details>
+
+```python3
+
+def is_even(num):
+    return (num % 2) == 0
+
+def is_odd(num):
+    return (num % 2) == 1
+
+# A more clever way to check is_odd
+def is_odd(num):
+    return not is_even(num)
+
+```
+
+## </details>
+
+You should have a nice set of functions that dont really do anything useful, but thats ok. They are all in one file. And that file is getting kinda long.
+
+Lets say you have another file that would like to use your `is_even` function. How can it?
+Its easy, simply create another file called `app.py`.
+
+In that file, you can `import` the `is_even` function by adding the following at the top
+
+```python3
+
+from bunch_of_functions import is_even
+
+print("calling is_even from another file!!")
+print(is_even(101))
+```
+
+Try importing another function and using it.
+
+### An API
+
+What is an API, its a big word for nothing TBH. But its kinda a simple idea. So youve got all these functions that arent very useful for you, but lets say someone on the other side of the world doesnt know how to check if a number is even or odd, and they will pay you to do it. They want their computer to be able to send a number
