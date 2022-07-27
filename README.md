@@ -9,9 +9,12 @@ Also, all of your code and code history will go in this github repository so you
 
 Some preliminary things you should do before starting
 
-1. Make sure python is installed.  
+1. Make sure python is installed.
+
    In vscode, open up the terminal and type `python3`, or `python`. If it opens up then thats great. It's installed.
-2. 2 ways to code in python
+
+2. Two different ways to code in python
+
    To code in python, you can do it 2 ways, one way is to type the code in a **file** (using a text editor like vscode). The other way is to just type `python3` in the **terminal** and then just type the code in there. The latter is good for playing around with the language and experimenting. The former is better for longer projects that are more than a few lines long.
 
    For the latter, its painful to just use the default python. It is not very user friendly. Fortunately there is a nicer version just for playing around with on the terminal called `ipython`. Install it by running the following in the terminal: `pip install ipython`. Then you should be able to run it by just typing `ipython`. It should open up just like typing `python3` would, but its a much better thing to look at and use.
@@ -105,7 +108,9 @@ Now, you will see some output.
 
 Lets leave that function where it is, and add another function, one that triples a number
 
-**Try this yourself first**
+**Try this yourself first**, Then click on the **details** to expand the code so you can see it
+
+**[TODO]**
 
 <details>
 
@@ -117,7 +122,7 @@ def triple_number(num):
 
 </details>
 
-Try adding another function that takes the average of 2 numbers:
+**[TODO]** Try adding another function that takes the average of 2 numbers:
 
 <details>
 
@@ -130,7 +135,8 @@ def average_of_two_nums(num1, num2):
 
 </details>
 
-Now add a function that takes the average of list of numbers: ie. average([1,2,3]) is 6/3 == 2
+**[TODO]** Now add a function that takes the average of list of numbers: ie. average([1,2,3]) is 6/3 == 2
+
 If you dont know much about lists, open `ipython` and play around with one
 
 ```ipython
@@ -156,7 +162,7 @@ def average_of_list(list_nums):
 
 </details>
 
-Finally, create 2 functions, `def is_even(num)` and `def is_odd(num)`, and add them to your set of functions.
+**[TODO]** Finally, create 2 functions, `def is_even(num)` and `def is_odd(num)`, and add them to your set of functions.
 
 <details>
 
@@ -238,7 +244,7 @@ def dog():
 
 ```
 
-See that you get something else back when you go to this URL http://localhost:5000/clyde
+See that you get something else back when you go to this URL http://localhost:5000/clyde. Note the `/clyde` on the end of the URL.
 
 We can kinda make sense of the whole Flask thing. You are running a python program on your laptop which when you say "get me the url ending in `/clyde`" it returns a piece of text.
 
@@ -271,7 +277,7 @@ In [7]: randint(0, 999)
 Out[7]: 327
 ```
 
-Add a function to the `app.py` which returns a random integer between 0 and 1000 when someone goes to the url `/random`.
+**[TODO]** Add a function to the `app.py` which returns a random integer between 0 and 1000 when someone goes to the url `/random`.
 
 <details>
 
@@ -288,4 +294,13 @@ Go to http://localhost:5000/random and refresh the page a few times
 Note that if you just return an int then flask will freak out. It wants you to return a string, thats why we `str(num)`. It seems that everything returned from one of these magic functions must be a string.
 
 </details>
-```
+
+This person who will pay us for each isEven check, unfortunately is not satisfied by the random number generator. They have no way of getting us the number they want checked.
+
+It would be nice if they could go to a URL like
+
+http://localhost:5000/isEven
+
+and add something like `?number=10001` onto the URL so we know to check that number for them, then return True/False.
+
+This is exactly what we will do next
