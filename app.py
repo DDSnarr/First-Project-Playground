@@ -6,6 +6,8 @@
 from flask import Flask, request
 from random import randint
 
+from prime_number import isPrime
+
 app = Flask(__name__)
 
 
@@ -43,5 +45,15 @@ def is_Even():
     else:
         return "Is odd!"
 
+@app.get("/isPrime")
+def checkPrime():
+    num = request.args.get("number")
+    if num is None:
+        print("The user forgot to send a number.")
+        return "Error! Please send a number by putting ?number=(input) after url."
+
+    num = int(num)
+
+    return str(isPrime(num))
 
 app.run(debug=True, port=5000)
